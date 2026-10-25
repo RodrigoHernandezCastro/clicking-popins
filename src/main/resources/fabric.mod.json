@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "click-popins",
+	"version": "${version}",
+	"name": "click-popins",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/click-popins/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "popins.clicks.ClickPopins",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "popins.clicks.client.ClickPopinsClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"click-popins.mixins.json",
+		{
+			"config": "click-popins.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
